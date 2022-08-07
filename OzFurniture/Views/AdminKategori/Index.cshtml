@@ -1,0 +1,29 @@
+﻿@using Furniture.ENTITIES.Concrete
+@model List<Kategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kategori Adı</th>
+        <th>Gorsel</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Başlık</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.KategoriId</th>
+            <td>@item.KategoriAdi</td>
+            <td>@item.Gorsel</td>
+            <td><a href="/AdminKategori/DeleteKategori/@item.KategoriId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/AdminKategori/EditKAtegori/@item.KategoriId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="#" class="btn btn-primary">Başlık</a></td>
+        </tr>
+    }
+</table>
+<a href="/AdminKategori/AddKategori" class="btn btn-info">Yeni Kategori</a>

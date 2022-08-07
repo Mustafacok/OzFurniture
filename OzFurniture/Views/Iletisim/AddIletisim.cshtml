@@ -1,0 +1,31 @@
+﻿@model Furniture.ENTITIES.Concrete.Iletisim
+@{
+    ViewBag.Title = "AddIletisim";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Iletisim Ekle</h2>
+<br />
+@using (Html.BeginForm("AddIletisim", "Iletisim", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Iletisim Adı:")
+    @Html.TextBoxFor(x => x.Adi, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Adi)
+    <br />
+    @Html.Label("Iletisim Email:")
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Email)
+    <br />
+    @Html.Label("Iletisim Başlık:")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Baslik)
+    <br />
+    @Html.Label("Iletisim Açıklama:")
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Aciklama)
+    <br />
+    <button class="btn btn-info">İletişim Ekle</button>
+    <a href="/Iletisim/Index" class="btn btn-primary">Vazgeç</a>
+</div>
+}

@@ -1,0 +1,30 @@
+﻿@model Furniture.ENTITIES.Concrete.Kategori
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<h2>Yeni Kategori Ekleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("AddKategori", "Kategori", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Kategori Adı")
+    @Html.TextBoxFor(x => x.KategoriAdi)
+    @Html.ValidationMessageFor(x => x.KategoriAdi)
+    <br />
+    <br />
+    @Html.Label("Görseli ekleyiniz")
+    @Html.TextBoxFor(x => x.Gorsel)
+    @Html.ValidationMessageFor(x => x.Gorsel)
+    <br /><br />
+    <button>Kaydet</button>
+</div>
+}
+
+
+
+@*<form class="form-group"  method="post">
+        <input type="text" class="form-control" name="KategoriAdi" placeholder="Kategori Adı" />
+        <br />
+        <button class="btn btn-primary">Ekle</button>
+    </form>*@

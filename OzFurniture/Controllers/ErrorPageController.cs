@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace OzFurniture.Controllers
+{
+    public class ErrorPageController : Controller
+    {
+        // GET: ErrorPage
+        public ActionResult Hata403()
+        {
+            Response.StatusCode = 403;
+            Response.TrySkipIisCustomErrors = true;
+            return View();
+        }
+        public ActionResult Hata404()
+        {
+            Response.StatusCode = 404;
+            Response.TrySkipIisCustomErrors = true;
+            return View();
+        }
+    }
+}

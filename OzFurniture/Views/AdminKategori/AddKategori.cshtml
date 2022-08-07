@@ -1,0 +1,24 @@
+﻿@model Furniture.ENTITIES.Concrete.Kategori
+@{
+    ViewBag.Title = "AddKategori";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Kategori Ekleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("AddKategori", "AdminKategori", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Kategori Adı")
+    @Html.TextBoxFor(x => x.KategoriAdi, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.KategoriAdi)
+    <br />
+    <br />
+    @Html.Label("Görseli ekleyiniz")
+    @Html.TextBoxFor(x => x.Gorsel, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Gorsel)
+    <br /><br />
+    <button class="btn btn-info">Kaydet</button>
+    <a href="/AdminKategori/Index" class="btn btn-primary">Vazgeç</a>
+</div>
+}

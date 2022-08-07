@@ -1,0 +1,35 @@
+﻿@model Furniture.ENTITIES.Concrete.Blog
+@{
+    ViewBag.Title = "EditBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Blog Düzenle</h2>
+@using (Html.BeginForm("EditBlog","Blog",FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Blog Id:")
+    @Html.TextBoxFor(x => x.BlogId, new { @class = "form-control" })
+    <br />
+    @Html.Label("Blog Adı:")
+    @Html.TextBoxFor(x => x.BlogAdi, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BlogAdi)
+    <br />
+    @Html.Label("Blog İçeriği:")
+    @Html.TextBoxFor(x => x.BlogIcerigi, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BlogIcerigi)
+    <br />
+    @Html.Label("Blog Görseli:")
+    @Html.TextBoxFor(x => x.BlogGorseli, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.BlogGorseli)
+    <br />
+    @Html.Label("Ürün Adı:")
+    @Html.TextBoxFor(x => x.Urun.UrunAdi, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Urun.UrunAdi)
+    <br />
+    <button class="btn btn-success">Değişikleri Kaydet</button>
+    <a href="/Blog/Index" class="btn btn-primary">Vazgeç</a>
+</div>
+}
+

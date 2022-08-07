@@ -1,0 +1,27 @@
+﻿@using Furniture.ENTITIES.Concrete
+@model List<Blog>
+@{
+    ViewBag.Title = "Blog | ÖzFurniture";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="panel">
+    <header class="panel-heading">
+        Bloglar
+    </header>
+    @foreach (var item in Model)
+    {
+<div class="panel-body">
+    <h4><strong>@item.BlogAdi</strong></h4>
+    <p>
+        @item.BlogIcerigi
+    </p>
+    <strong>Ürün Adı :</strong>  @item.Urun.UrunAdi
+    <img src="~/flatlab-master/img/gallery/3.jpg" id="demo1" alt="Jcrop Example" class="img-responsive" style="height:400px; width:400px;" /><br />
+    <a href="~/Blog/EditBlog/@item.BlogId" class="btn btn-sm btn-primary">Blog Düzenle</a>
+    <hr />
+</div>
+    }
+    
+</section>
+

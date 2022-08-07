@@ -1,0 +1,28 @@
+﻿@using Furniture.ENTITIES.Concrete
+@model List<Iletisim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Adı</th>
+        <th>Email</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.IletisimId</td>
+            <td>@item.Adi</td>
+            <td>@item.Email</td>
+            <td>@item.Baslik</td>
+            <td>@item.Aciklama</td>
+        </tr>
+    }
+</table>
+<a href="/Iletisim/AddIletisim" class="btn btn-info">Yeni İletişim Ekle</a>

@@ -1,0 +1,183 @@
+﻿@using Furniture.ENTITIES.Concrete
+@model List<Urun>
+@{
+    ViewBag.Title = "Ürün | ÖzFurniture";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="OzbekFurniture">
+    <meta name="keyword" content="Furniture, Ahşap, Kapı-Pencere, Mutfak-Banyo Dolabı, Masa-Sandalye">
+    <link rel="shortcut icon" href="~/favicon.ico">
+
+    <title>Urun Sayfası</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/flatlab-master/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/flatlab-master/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="~/flatlab-master/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/flatlab-master/assets/jquery-ui/jquery-ui-1.10.1.custom.min.css" rel="stylesheet" />
+    <!--right slidebar-->
+    <link href="~/flatlab-master/css/slidebars.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="~/flatlab-master/css/style.css" rel="stylesheet">
+    <link href="~/flatlab-master/css/style-responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- page start-->
+    <div class="row">
+        <div class="col-md-3">
+            <section class="panel">
+                <div class="panel-body">
+                    <input type="text" placeholder="Urun Ara" class="form-control">
+                </div>
+            </section>
+            <section class="panel">
+                <header class="panel-heading">
+                    Kategori
+                </header>
+                <div class="panel-body">
+                    <ul class="nav prod-cat">
+                        <li><a href="#" class="active">Ofis Mobilyaları</a></li>
+                        <li><a href="#">Mutfak Banyo Mobilyaları</a></li>
+                        <li><a href="#">Kapı Pencereler</a></li>
+                        <li><a href="#">Masa Sandalyeler</a></li>
+                        <li><a href="#">Oturma Grupları</a></li>
+                        <li><a href="#">Yatak Odası Mobilyaları</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="panel">
+                <header class="panel-heading">
+                    İndirimde Olanlar
+                </header>
+                <div class="panel-body sliders">
+                    <ol>
+                        <li><a href="#">Oturma Grupları</a></li>
+                    </ol>
+                </div>
+            </section>
+            <section class="panel">
+                <header class="panel-heading">
+                    Çok Satanlar
+                </header>
+                <div class="panel-body">
+                    <div class="best-seller">
+                        <article class="media">
+                            <a class="pull-left thumb p-thumb">
+                                <img src="~/flatlab-master/img/product1.jpg">
+                            </a>
+                            <div class="media-body">
+                                <a href="#" class=" p-head">Tutku.</a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </article>
+                        <article class="media">
+                            <a class="pull-left thumb p-thumb">
+                                <img src="~/flatlab-master/img/product2.png">
+                            </a>
+                            <div class="media-body">
+                                <a href="#" class=" p-head">Sitil.</a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </article>
+                        <article class="media">
+                            <a class="pull-left thumb p-thumb">
+                                <img src="~/flatlab-master/img/product3.png">
+                            </a>
+                            <div class="media-body">
+                                <a href="#" class=" p-head">Tasarım.</a>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-md-9">
+            @foreach (var item in Model)
+            {
+            <section class="panel">
+                <header class="panel-heading tab-bg-dark-navy-blue">
+                    <ul class="nav nav-tabs ">
+                        <li class="active">
+                            <a data-toggle="tab" href="#">
+                                Urun Adı : @item.UrunAdi
+                            </a>
+                        </li>
+
+                    </ul>
+                </header>
+                <div class="panel-body">
+                    <div class="tab-content tasi-tab">
+                        <div id="description" class="tab-pane active">
+                            <h4 class="pro-d-head">Ürün Açıklaması</h4>
+                            <p> @item.UrunAciklama </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row product-list">
+                    <div class="col-md-4">
+                        <section class="panel">
+                            <div class="pro-img-box">
+                                <img src="~/flatlab-master/img/product-list/pro-thumb-3.jpg" alt="" />
+                                @item.UrunGorseli
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <a href="~/Urun/AddUrun/@item.UrunId" class="btn btn-sm btn-primary">Ürün Ekle</a>
+                <a href="~/Urun/EditUrun/@item.UrunId" class="btn btn-sm btn-warning">Ürün Düzenle</a>
+                <br />
+            </section>
+                
+                
+            }
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="text-center">
+            @DateTime.Now.Year &copy; FlatLab by VectorLab.
+            <a href="product_details.html#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="~/flatlab-master/js/jquery.js"></script>
+    <script src="~/flatlab-master/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="~/flatlab-master/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="~/flatlab-master/js/jquery.scrollTo.min.js"></script>
+    <script src="~/flatlab-master/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="~/flatlab-master/assets/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+    <script src="~/flatlab-master/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="~/flatlab-master/js/jquery.customSelect.min.js"></script>
+    <script src="~/flatlab-master/js/respond.min.js"></script>
+    <!--right slidebar-->
+    <script src="~/flatlab-master/js/slidebars.min.js"></script>
+    <!--common script for all pages-->
+    <script src="~/flatlab-master/js/common-scripts.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $(function () {
+                $('select.styled').customSelect();
+            });
+        });
+
+
+    </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,30 @@
+﻿@model Furniture.ENTITIES.Concrete.Urun
+@{
+    ViewBag.Title = "EditUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Urun Düzenle</h2>
+@using (Html.BeginForm("EditUrun", "Urun", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Urun Id:")
+    @Html.TextBoxFor(x => x.UrunId, new { @class = "form-control" })
+    <br />
+    @Html.Label("Urun Adı:")
+    @Html.TextBoxFor(x => x.UrunAdi, new { @class = "form-control" })
+    <br />
+    @Html.Label("Urun Aciklamasi:")
+    @Html.TextBoxFor(x => x.UrunAciklama, new { @class = "form-control" })
+    <br />
+    @Html.Label("Urun Görseli:")
+    @Html.TextBoxFor(x => x.UrunGorseli, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kategori Adı:")
+    @Html.TextBoxFor(x => x.Kategori.KategoriAdi, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Değişikleri Kaydet</button>
+    <a href="/Urun/Index" class="btn btn-primary">Vazgeç</a>
+</div>
+}
+

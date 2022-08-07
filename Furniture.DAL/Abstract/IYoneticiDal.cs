@@ -1,0 +1,13 @@
+﻿using Furniture.ENTITIES.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Furniture.DAL.Abstract
+{
+    interface IYoneticiDal:IRepository<Yonetici>
+    {
+    }
+}

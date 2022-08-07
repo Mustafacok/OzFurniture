@@ -1,0 +1,23 @@
+﻿@model Furniture.ENTITIES.Concrete.Kategori
+@{
+    ViewBag.Title = "EditKategori";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Güncelle</h2>
+@using (Html.BeginForm("EditKategori", "AdminKategori", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Kategori Id:")
+        @Html.TextBoxFor(x => x.KategoriId, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kategori Adı:")
+        @Html.TextBoxFor(x => x.KategoriAdi, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kategori Gorsel:")
+        @Html.TextBoxFor(x => x.Gorsel, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+        <a href="/AdminKategori/Index" class="btn btn-primary">Vazgeç</a>
+    </div>
+}
