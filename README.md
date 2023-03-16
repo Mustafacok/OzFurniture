@@ -18,7 +18,7 @@ Projenin yapım aşamaları;
 •	Admin paneli için Login Controller ve View i düzenlendi. AdminKategori ve Blog sayfalarına yetki verildi.
 •	Hata Controller oluşturularak adres satırında yanlış karakterler girilmesi engellendi ve 404 sayfasına Web Config’te bulunan Connection String bağlantısı kullanıldı.
 •	Anasayfa düzenlemeleri yapıldı.
-•	Admin paneli tasarımları yapıldı, diğer yönetici ve personel panelleri ise yetiştiremedim. 
+•	Admin paneli tasarımları yapıldı, diğer yönetici ve personel panelleri ise geliştirilecektir. 
 
 
 
